@@ -28,29 +28,29 @@ const { Sequelize } = require('sequelize');
 
 let sequelize;
 
-// 🚀 1. Check if we are on Render (using the DB_URL variable)
 if (process.env.DB_URL) {
+  // 🚀 PRODUCTION: Render + Postgres
   sequelize = new Sequelize(process.env.DB_URL, {
-    dialect: 'postgres', // 🔥 Must be postgres for Render
+    dialect: 'postgres',
     protocol: 'postgres',
     logging: false, 
     dialectOptions: {
       ssl: {
         require: true,
-        rejectUnauthorized: false // 🔥 Required for Render Free Tier
+        rejectUnauthorized: false 
       }
     }
   });
   console.log("📡 Connected to Render Postgres Database");
 } else {
-  // 💻 2. Fallback to your local MAMP / MySQL settings
+  // 💻 DEVELOPMENT: Local + MySQL (MAMP)
   sequelize = new Sequelize(
     process.env.DB_NAME || 'backend_pos_db',
     process.env.DB_USER || 'root',
-    process.env.DB_PASSWORD || 'root', // MAMP default is usually 'root'
+    process.env.DB_PASSWORD || 'root', 
     {
       host: process.env.DB_HOST || 'localhost',
-      port: process.env.DB_PORT || 8889, // MAMP default port
+      port: process.env.DB_PORT || 8889,
       dialect: 'mysql'
     }
   );
