@@ -1,0 +1,44 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+  color: #475569; /* Applied globally! */
+  line-height: 1.5;
+  background-color: #f8fafc;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content-area {
+  margin-left: 260px; /* Matches new sidebar width */
+  flex: 1;
+  overflow-y: auto;
+  background-color: #f8fafc; /* Light slate background */
+}
+
+.page-container {
+  padding: 32px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Scrollbar for main content */
+.content-area::-webkit-scrollbar {
+  width: 8px;
+}
+.content-area::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+.content-area::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+.content-area::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

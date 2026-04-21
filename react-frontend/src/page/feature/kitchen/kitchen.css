@@ -1,0 +1,87 @@
+.kitchen-wrapper {
+  background-color: #0f172a;
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.kitchen-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #334155;
+  padding-bottom: 15px;
+}
+
+.kitchen-logo { display: flex; align-items: center; gap: 10px; }
+.kitchen-logo h1 { font-size: 20px; font-weight: 900; letter-spacing: 1px; }
+
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.order-ticket {
+  background: white;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+.ticket-header {
+  background: #3b82f6;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-number { font-size: 24px; font-weight: 900; }
+.type-tag { font-size: 11px; font-weight: 800; padding: 4px 8px; border-radius: 6px; background: rgba(0,0,0,0.2); }
+
+.ticket-meta {
+  padding: 10px 15px;
+  background: #f8fafc;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 700;
+  color: #64748b;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.items-area { padding: 15px; flex: 1; }
+.item-row { display: flex; gap: 10px; font-size: 18px; font-weight: 800; color: #1e293b; margin-bottom: 4px; }
+.item-qty { color: #3b82f6; }
+
+.item-mods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #3b82f6;
+  text-transform: uppercase;
+  margin-left: 35px;
+  margin-bottom: 12px;
+}
+
+.btn-complete {
+  margin: 15px;
+  padding: 15px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-complete:hover { background: #059669; transform: scale(1.02); }
