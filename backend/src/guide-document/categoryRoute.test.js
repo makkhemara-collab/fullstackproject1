@@ -114,24 +114,24 @@
 
 /*
 // Search categories (keyword: electronics)
-curl -X GET "http://localhost:3000/api/category/search?keyword=electronics"
+curl -X GET "https://fullstackproject1-2.onrender.com/api/category/search?keyword=electronics"
 
 // Get all categories
-curl -X GET "http://localhost:3000/api/category"
+curl -X GET "https://fullstackproject1-2.onrender.com/api/category"
 
 // Get specific category by code
-curl -X GET "http://localhost:3000/api/category?code=CAT001"
+curl -X GET "https://fullstackproject1-2.onrender.com/api/category?code=CAT001"
 
 // Create new category
-curl -X POST "http://localhost:3000/api/category" \
+curl -X POST "https://fullstackproject1-2.onrender.com/api/category" \
   -H "Content-Type: application/json" \
   -d '{"code":"CAT004","desc":"Furniture","remark":"Home furniture"}'
 
 // Update category
-curl -X PUT "http://localhost:3000/api/category/CAT001" \
+curl -X PUT "https://fullstackproject1-2.onrender.com/api/category/CAT001" \
   -H "Content-Type: application/json" \
   -d '{"desc":"New Description","remark":"New remark"}'
 
 // Delete category
-curl -X DELETE "http://localhost:3000/api/category/CAT001"
+curl -X DELETE "https://fullstackproject1-2.onrender.com/api/category/CAT001"
 */

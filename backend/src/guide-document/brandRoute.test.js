@@ -129,24 +129,24 @@
 
 /*
 // Search brands (keyword: samsung)
-curl -X GET "http://localhost:3000/api/brand/search?keyword=samsung"
+curl -X GET "https://fullstackproject1-2.onrender.com/api/brand/search?keyword=samsung"
 
 // Get all brands
-curl -X GET "http://localhost:3000/api/brand"
+curl -X GET "https://fullstackproject1-2.onrender.com/api/brand"
 
 // Get specific brand by code
-curl -X GET "http://localhost:3000/api/brand?code=BRAND001"
+curl -X GET "https://fullstackproject1-2.onrender.com/api/brand?code=BRAND001"
 
 // Create new brand
-curl -X POST "http://localhost:3000/api/brand" \
+curl -X POST "https://fullstackproject1-2.onrender.com/api/brand" \
   -H "Content-Type: application/json" \
   -d '{"code":"BRAND004","desc":"LG","category_id":"CAT001","remark":"Electronics","photo":"lg_logo.png"}'
 
 // Update brand
-curl -X PUT "http://localhost:3000/api/brand/BRAND001" \
+curl -X PUT "https://fullstackproject1-2.onrender.com/api/brand/BRAND001" \
   -H "Content-Type: application/json" \
   -d '{"desc":"Samsung New","remark":"Updated","photo":"samsung_updated.png"}'
 
 // Delete brand
-curl -X DELETE "http://localhost:3000/api/brand/BRAND001"
+curl -X DELETE "https://fullstackproject1-2.onrender.com/api/brand/BRAND001"
 */
