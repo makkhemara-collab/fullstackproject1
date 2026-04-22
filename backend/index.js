@@ -1,11 +1,10 @@
 require('dotenv').config();
 const express = require('express');
-const path = require('path'); // ✅ Keep this one at the top
+const path = require('path');
 const runMigrations = require('./src/config/migrate');
-const schedule = require('node-schedule');
 const cors = require('cors');
 
-// import routes features
+// Import routes
 const categoryRoute = require('./src/route/categoryRoute');
 const brandRoute = require('./src/route/brandRoute');
 const productRoute = require('./src/route/productRoute');
@@ -21,19 +20,13 @@ const tableRoute = require('./src/route/tableRoute');
 
 const app = express();
 
-// Middleware
-app.use(cors({
-  origin: [
-    "http://localhost:5173", // For testing on your computer
-    "https://fullstackproject1-2.onrender.com" // For your live Render site
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+// 🛡️ NO-RESTRICTION CORS: Allows your teacher to view from any URL
+app.use(cors()); 
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
-// 🖼️ This makes your profile pictures visible to the frontend
+
+// 🖼️ STATIC ASSETS: Opens the 'assets' folder to the internet
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
 // Routes
@@ -52,24 +45,18 @@ tableRoute(app);
 
 const PORT = process.env.PORT || 3000;
 
-// Initialize database and start server
 const startServer = async () => {
   try {
     console.log('\n🚀 Starting server...');
-    
-    // Run migrations on startup
     await runMigrations();
-    
-    // Start the server
     app.listen(PORT, () => {
-      console.log(`\n✓ Server is running on http://localhost:${PORT}\n`);
+      console.log(`\n✓ Server is running on port ${PORT}\n`);
     });
   } catch (error) {
-  console.error('\n✗ Failed to start server:');
-  console.error(error); // 👈 Print the RAW error object
-  process.exit(1);
-}
+    console.error('\n✗ Failed to start server:');
+    console.error(error);
+    process.exit(1);
+  }
 };
 
-// Start the application
 startServer();
