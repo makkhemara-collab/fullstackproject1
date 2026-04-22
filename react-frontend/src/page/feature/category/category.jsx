@@ -71,7 +71,7 @@ const CategoryPage = () => {
     );
     if (result.isConfirmed) {
       try {
-        const response = await request(`api/category/${code}`, "DELETE");
+        const response = await request(`/api/category/${code}`, "DELETE");
         if (response.success) {
           showAlert("success", "Category deleted successfully");
           fetchCategories();
@@ -94,7 +94,7 @@ const CategoryPage = () => {
     try {
       let response;
       if (editingCode) {
-        response = await request(`api/category`, "PUT", {
+        response = await request(`/api/category`, "PUT", {
           code: formData.code,
           desc: formData.desc,
           remark: formData.remark,

@@ -88,7 +88,7 @@ const Category_Page = () => {
  const handleDeleteCategory = async (code) => {
     if (window.confirm(`Are you sure you want to delete category ${code}?`)) {
       try {
-        const response = await request(`api/category/${code}`, "DELETE");
+        const response = await request(`/api/category/${code}`, "DELETE");
         if (response.success) {
           alert("Category deleted successfully");
           fetchCategories();
@@ -114,7 +114,7 @@ const Category_Page = () => {
       let response;
       if (editingCode) {
         // Update
-        response = await request(`api/category`, "PUT", {
+        response = await request(`/api/category`, "PUT", {
           code: formData.code,
           desc: formData.desc,
           remark: formData.remark,

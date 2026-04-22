@@ -28,7 +28,7 @@ export const useKitchen = () => {
 
   const completeOrder = async (id) => {
     try {
-      await request(`api/sale/${id}`, "PUT", { status: "Completed" });
+      await request(`/api/sale/${id}`, "PUT", { status: "Completed" });
       fetchOrders();
     } catch (err) {
       console.error("Update Error:", err);

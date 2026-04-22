@@ -59,7 +59,7 @@ const ReportsPage = () => {
       switch (activeTab) {
         case "sales":
           const [salesRes, paymentRes] = await Promise.all([
-            request(`api/report/sales?period=${period}`, "GET"),
+            request(`/api/report/sales?period=${period}`, "GET"),
             request("/api/report/sales/payment-methods", "GET"),
           ]);
           if (salesRes?.success) setSalesData(salesRes);

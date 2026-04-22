@@ -109,7 +109,7 @@ const ProductPage = () => {
     );
     if (result.isConfirmed) {
       try {
-        const response = await request(`api/product/${prd_id}`, "DELETE");
+        const response = await request(`/api/product/${prd_id}`, "DELETE");
         if (response.success) {
           showAlert("success", "Product deleted successfully");
           fetchProducts();
@@ -160,7 +160,7 @@ const ProductPage = () => {
       if (selectedPhotoFile) payload.append("photo", selectedPhotoFile);
 
       const response = editingId
-        ? await request(`api/product`, "PUT", payload)
+        ? await request(`/api/product`, "PUT", payload)
         : await request("/api/product", "POST", payload);
 
       if (response?.success) {
@@ -179,7 +179,7 @@ const ProductPage = () => {
     const categoryId = e.target.value;
     setFormData((prev) => ({ ...prev, category_id: categoryId, brand_id: "" }));
     try {
-      const response = await request(`api/brand?category=${categoryId}`, "GET");
+      const response = await request(`/api/brand?category=${categoryId}`, "GET");
       if (response.success) {
         setBrands(response.data);
       }

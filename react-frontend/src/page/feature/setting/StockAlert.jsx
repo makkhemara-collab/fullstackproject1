@@ -58,7 +58,7 @@ const StockAlert = () => {
             };
 
             if (settings.id) {
-                await request(`api/alert-setting/${settings.id}`, "PUT", payload);
+                await request(`/api/alert-setting/${settings.id}`, "PUT", payload);
             } else {
                 await request("/api/alert-setting", "POST", payload);
             }

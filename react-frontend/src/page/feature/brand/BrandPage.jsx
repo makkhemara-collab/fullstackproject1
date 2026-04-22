@@ -116,7 +116,7 @@ const BrandPage = () => {
     );
     if (result.isConfirmed) {
       try {
-        const response = await request(`api/brand/${code}`, "DELETE");
+        const response = await request(`/api/brand/${code}`, "DELETE");
         if (response.success) {
           showAlert("success", "Brand deleted successfully");
           fetchBrands();
@@ -148,7 +148,7 @@ const BrandPage = () => {
         payload.append("photo", selectedPhotoFile);
       }
       const response = editingCode
-        ? await request(`api/brand/${editingCode}`, "PUT", payload)
+        ? await request(`/api/brand/${editingCode}`, "PUT", payload)
         : await request("/api/brand", "POST", payload);
 
       if (response?.success) {

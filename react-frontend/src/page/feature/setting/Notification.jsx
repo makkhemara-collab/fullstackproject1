@@ -77,7 +77,7 @@ const Notification = () => {
 
         if (result.isConfirmed) {
             try {
-                await request(`api/telegram-config/${tel_id}`, "DELETE");
+                await request(`/api/telegram-config/${tel_id}`, "DELETE");
                 showAlert("success", "Notification deleted successfully");
                 fetchNotifications();
             } catch (error) {
@@ -107,7 +107,7 @@ const Notification = () => {
         try {
             if (editingId) {
                 // Update existing
-                await request(`api/telegram-config/${editingId}`, "PUT", {
+                await request(`/api/telegram-config/${editingId}`, "PUT", {
                     token: formData.token,
                     group_id: formData.group_id,
                     status: formData.status,

@@ -74,7 +74,7 @@ const MethodPayment = () => {
 
         if (result.isConfirmed) {
             try {
-                await request(`api/payment-method/${code}`, "DELETE");
+                await request(`/api/payment-method/${code}`, "DELETE");
                 showAlert("success", "Payment method deleted successfully");
                 fetchPaymentMethods();
             } catch (error) {
@@ -100,7 +100,7 @@ const MethodPayment = () => {
         try {
             if (editingCode) {
                 // Update existing
-                await request(`api/payment-method/${editingCode}`, "PUT", {
+                await request(`/api/payment-method/${editingCode}`, "PUT", {
                     type: formData.type,
                     is_active: formData.is_active,
                     fee: formData.fee

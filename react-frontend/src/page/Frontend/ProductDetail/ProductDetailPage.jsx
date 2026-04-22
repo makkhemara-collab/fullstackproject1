@@ -21,7 +21,7 @@ const ProductDetailPage = () => {
     const loadProduct = async () => {
       try {
         setIsLoading(true);
-        const response = await request(`api/product/${id}`, "GET");
+        const response = await request(`/api/product/${id}`, "GET");
         if (response?.data) setProduct(response.data);
       } catch (error) { console.error(error); }
       finally { setIsLoading(false); }
