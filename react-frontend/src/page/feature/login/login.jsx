@@ -19,12 +19,20 @@ const Login = () => {
         `${baseURL}/api/user/login`, // ✅ This will now use the correct -1-dzlc link
         { email, password },
       );
+      // Inside handleLogin try block...
       if (response.data.success) {
         localStorage.setItem("token", response.data.token);
-        localStorage.setItem("user", JSON.stringify(response.data.data)); // Save profile & role
 
-        // Route based on responsibility
-        if (response.data.data.role === "barista") {
+        const userData = response.data.data;
+
+        // ✨ FIX: If the user has a photo, wrap it in getImagePath immediately
+        if (userData.photo) {
+          userData.photo = getImagePath(userData.photo);
+        }
+
+        localStorage.setItem("user", JSON.stringify(userData));
+
+        if (userData.role === "barista") {
           navigate("/kitchen");
         } else {
           navigate("/dashboard");
@@ -46,7 +54,7 @@ const Login = () => {
         style={{
           flex: 1,
           /* 👇 1. This adds a 50% dark overlay AND your image */
-         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), #475569), url("${getImagePath("differents-types-de-cafe.jpg")}")`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), #475569), url("${getImagePath("differents-types-de-cafe.jpg")}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
