@@ -43,8 +43,8 @@ const ReportsPage = () => {
   const fetchFilters = async () => {
     try {
       const [catRes, brandRes] = await Promise.all([
-        request("api/category", "GET"),
-        request("api/brand", "GET"),
+        request("/api/category", "GET"),
+        request("/api/brand", "GET"),
       ]);
       if (catRes?.success) setCategories(catRes.data || []);
       if (brandRes?.success) setBrands(brandRes.data || []);
@@ -60,21 +60,21 @@ const ReportsPage = () => {
         case "sales":
           const [salesRes, paymentRes] = await Promise.all([
             request(`api/report/sales?period=${period}`, "GET"),
-            request("api/report/sales/payment-methods", "GET"),
+            request("/api/report/sales/payment-methods", "GET"),
           ]);
           if (salesRes?.success) setSalesData(salesRes);
           if (paymentRes?.success) setPaymentMethods(paymentRes.data);
           break;
         case "inventory":
           const [invRes, productsRes] = await Promise.all([
-            request("api/report/inventory", "GET"),
-            request("api/product", "GET"),
+            request("/api/report/inventory", "GET"),
+            request("/api/product", "GET"),
           ]);
           if (invRes?.success) setInventorySummary(invRes.data);
           if (productsRes?.success) setInventoryData(productsRes.data || []);
           break;
         case "customers":
-          const custRes = await request("api/report/customers", "GET");
+          const custRes = await request("/api/report/customers", "GET");
           if (custRes?.success) setCustomerStats(custRes.data);
           break;
       }

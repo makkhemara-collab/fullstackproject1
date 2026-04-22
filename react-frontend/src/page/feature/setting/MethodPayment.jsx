@@ -20,7 +20,7 @@ const MethodPayment = () => {
     const fetchPaymentMethods = async () => {
         setLoading(true);
         try {
-            const response = await request("api/payment-method", "GET");
+            const response = await request("/api/payment-method", "GET");
             setPaymentMethods(Array.isArray(response) ? response : []);
         } catch (error) {
             console.error("Error fetching payment methods:", error);
@@ -108,7 +108,7 @@ const MethodPayment = () => {
                 showAlert("success", "Payment method updated successfully");
             } else {
                 // Create new
-                await request("api/payment-method", "POST", formData);
+                await request("/api/payment-method", "POST", formData);
                 showAlert("success", "Payment method created successfully");
             }
             setShowForm(false);

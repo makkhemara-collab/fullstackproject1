@@ -38,7 +38,7 @@ const MainPage = () => {
                 setIsLoading(true);
                 setErrorMessage("");
 
-                const response = await request("api/product", "GET");
+                const response = await request("/api/product", "GET");
                 const rows = Array.isArray(response?.data) ? response.data : [];
 
                 const mappedProducts = rows.map((item) => ({

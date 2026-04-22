@@ -9,7 +9,7 @@ const OrderHistory = () => {
 const fetchSales = async () => {
     try {
       setLoading(true);
-      const res = await request("api/sale", "GET");
+      const res = await request("/api/sale", "GET");
       
       // 💡 Let's look at exactly what the backend is sending
       console.log("API Response:", res); 

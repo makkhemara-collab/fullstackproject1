@@ -21,7 +21,7 @@ const Notification = () => {
     const fetchNotifications = async () => {
         setLoading(true);
         try {
-            const response = await request("api/telegram-config", "GET");
+            const response = await request("/api/telegram-config", "GET");
             setNotifications(Array.isArray(response) ? response : []);
         } catch (error) {
             console.error("Error fetching notifications:", error);
@@ -116,7 +116,7 @@ const Notification = () => {
                 showAlert("success", "Notification updated successfully");
             } else {
                 // Create new
-                await request("api/telegram-config", "POST", formData);
+                await request("/api/telegram-config", "POST", formData);
                 showAlert("success", "Notification created successfully");
             }
             setShowForm(false);

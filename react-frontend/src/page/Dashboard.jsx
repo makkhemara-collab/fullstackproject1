@@ -19,9 +19,9 @@ const Dashboard = () => {
         
         // Fetch all 3 APIs at the same time
         const [dashRes, invRes, dailyRes] = await Promise.all([
-          request("api/report/dashboard", "GET"),
-          request("api/report/inventory", "GET"),
-          request("api/report/sale/daily", "GET"), // 👈 NEW: Fetching daily chart data
+          request("/api/report/dashboard", "GET"),
+          request("/api/report/inventory", "GET"),
+          request("/api/report/sale/daily", "GET"), // 👈 NEW: Fetching daily chart data
         ]);
 
         if (dashRes?.success) setStats(dashRes.data);

@@ -33,7 +33,7 @@ export const AuthProvider = ({ children }) => {
       setError("");
       
       // API call for customer login
-      const response = await request("api/customer/login", "POST", { gmail: email, password });
+      const response = await request("/api/customer/login", "POST", { gmail: email, password });
       
       if (response?.success && response?.data) {
         const customerData = {
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }) => {
       setError("");
       
       // API call for customer registration
-      const response = await request("api/customer/register", "POST", {
+      const response = await request("/api/customer/register", "POST", {
         fullname: userData.name,
         gmail: userData.email,
         phone: userData.phone,

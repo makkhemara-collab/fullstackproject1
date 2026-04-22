@@ -35,7 +35,7 @@ const CategoryPage = () => {
   const fetchCategories = async () => {
     setLoading(true);
     try {
-      const response = await request("api/category", "GET");
+      const response = await request("/api/category", "GET");
       if (response.success) {
         setCategories(response.data);
       }
@@ -100,7 +100,7 @@ const CategoryPage = () => {
           remark: formData.remark,
         });
       } else {
-        response = await request("api/category", "POST", formData);
+        response = await request("/api/category", "POST", formData);
       }
       if (response.success) {
         showAlert("success", editingCode ? "Category updated successfully" : "Category created successfully");

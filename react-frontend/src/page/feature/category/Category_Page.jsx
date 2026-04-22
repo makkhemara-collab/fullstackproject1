@@ -48,7 +48,7 @@ const Category_Page = () => {
   const fetchCategories = async () => {
     setLoading(true);
     try {
-      const response = await request("api/category", "GET");
+      const response = await request("/api/category", "GET");
       if (response.success) {
         setCategories(response.data);
       }
@@ -121,7 +121,7 @@ const Category_Page = () => {
         });
       } else {
         // Create
-        response = await request("api/category", "POST", formData);
+        response = await request("/api/category", "POST", formData);
        }
 
       if (response.success) {

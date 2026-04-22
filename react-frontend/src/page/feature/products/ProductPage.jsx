@@ -53,7 +53,7 @@ const ProductPage = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await request("api/product", "GET");
+      const response = await request("/api/product", "GET");
       if (response.success) setProducts(response.data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -64,14 +64,14 @@ const ProductPage = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await request("api/category", "GET");
+      const response = await request("/api/category", "GET");
       if (response.success) setCategories(response.data);
     } catch (error) {}
   };
 
   const fetchBrands = async () => {
     try {
-      const response = await request("api/brand", "GET");
+      const response = await request("/api/brand", "GET");
       if (response.success) setBrands(response.data);
     } catch (error) {}
   };
@@ -161,7 +161,7 @@ const ProductPage = () => {
 
       const response = editingId
         ? await request(`api/product`, "PUT", payload)
-        : await request("api/product", "POST", payload);
+        : await request("/api/product", "POST", payload);
 
       if (response?.success) {
         showAlert("success", editingId ? "Product updated successfully" : "Product created successfully");

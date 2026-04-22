@@ -14,8 +14,8 @@ const Home = () => {
 
   const fetchMenuData = async () => {
     const [prodRes, catRes] = await Promise.all([
-      request("api/product", "GET"),
-      request("api/category", "GET"),
+      request("/api/product", "GET"),
+      request("/api/category", "GET"),
     ]);
     if (prodRes?.success) setProducts(prodRes.data);
     if (catRes?.success) setCategories(catRes.data);

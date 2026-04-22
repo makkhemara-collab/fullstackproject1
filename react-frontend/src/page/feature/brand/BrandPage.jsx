@@ -33,7 +33,7 @@ const BrandPage = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await request("api/category", "GET");
+      const response = await request("/api/category", "GET");
       if (response.success) {
         setCategories(response.data);
       }
@@ -59,7 +59,7 @@ const BrandPage = () => {
   const fetchBrands = async () => {
     setLoading(true);
     try {
-      const response = await request("api/brand", "GET");
+      const response = await request("/api/brand", "GET");
       if (response.success) {
         setBrands(response.data);
       }
@@ -149,7 +149,7 @@ const BrandPage = () => {
       }
       const response = editingCode
         ? await request(`api/brand/${editingCode}`, "PUT", payload)
-        : await request("api/brand", "POST", payload);
+        : await request("/api/brand", "POST", payload);
 
       if (response?.success) {
         showAlert("success", editingCode ? "Brand updated successfully" : "Brand created successfully");

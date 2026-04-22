@@ -16,7 +16,7 @@ const StockAlert = () => {
     const fetchSettings = async () => {
         setLoading(true);
         try {
-            const response = await request("api/alert-setting", "GET");
+            const response = await request("/api/alert-setting", "GET");
             if (Array.isArray(response) && response.length > 0) {
                 const data = response[0];
                 setSettings({
@@ -60,7 +60,7 @@ const StockAlert = () => {
             if (settings.id) {
                 await request(`api/alert-setting/${settings.id}`, "PUT", payload);
             } else {
-                await request("api/alert-setting", "POST", payload);
+                await request("/api/alert-setting", "POST", payload);
             }
             showAlert("success", "Inventory thresholds updated!");
             fetchSettings();

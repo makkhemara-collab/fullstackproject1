@@ -7,7 +7,7 @@ export const useKitchen = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await request("api/sale", "GET"); // Assuming sales are the orders
+      const response = await request("/api/sale", "GET"); // Assuming sales are the orders
       if (response?.success) {
         // We only want orders from "Today" that aren't 'Completed'
         const activeOrders = response.data.filter(o => o.status !== "Completed");

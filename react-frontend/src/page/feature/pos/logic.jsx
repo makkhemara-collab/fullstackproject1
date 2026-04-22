@@ -33,7 +33,7 @@ const usePos = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const response = await request("api/product", "GET");
+      const response = await request("/api/product", "GET");
       if (response.success) setProducts(response.data);
     } catch (error) { console.error(error); }
     finally { setLoading(false); }
@@ -41,7 +41,7 @@ const usePos = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await request("api/category", "GET");
+      const response = await request("/api/category", "GET");
       if (response.success) setCategories(response.data);
     } catch (error) {}
   };
@@ -118,7 +118,7 @@ const executePaymentAPI = async () => {
         }))
       };
 
-      await request("api/sale", "POST", saleData);
+      await request("/api/sale", "POST", saleData);
 
       setProcessing(false);
       setPaymentSuccess(true);
