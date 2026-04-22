@@ -10,7 +10,7 @@ const emptyForm = {
 };
 
 const ProductPage = () => {
-  const API_BASE_URL = "http://localhost:3000";
+  const API_BASE_URL = "https://fullstackproject1-2.onrender.com";
   const MAX_PHOTO_SIZE_MB = 2;
   const MAX_PHOTO_SIZE_BYTES = MAX_PHOTO_SIZE_MB * 1024 * 1024;
   const [products, setProducts] = useState([]);

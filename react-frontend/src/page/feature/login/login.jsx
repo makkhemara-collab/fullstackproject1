@@ -14,7 +14,7 @@ const Login = () => {
     setError("");
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/user/login",
+        "https://fullstackproject1-2.onrender.com/api/user/login",
         { email, password },
       );
       if (response.data.success) {

@@ -4,7 +4,7 @@ import { useCart } from "../../../context/CartContext";
 import { useAuth } from "../../../context/AuthContext";
 import request from "../../../utils/request";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://fullstackproject1-2.onrender.com";
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=60"; // Coffee fallback
 
 const formatPrice = (value) => {

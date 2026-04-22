@@ -1,4 +1,4 @@
-export const baseURL = "http://localhost:3000/";
+export const baseURL = "https://fullstackproject1-2.onrender.com/";
 
 export const getImagePath = (path) => {
   // If no path is provided in the database, use a default coffee image

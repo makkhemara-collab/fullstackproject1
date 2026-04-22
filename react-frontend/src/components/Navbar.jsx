@@ -5,7 +5,7 @@ import "../style/Navbar.css";
 // 💡 Helper to get the image URL (Matches your assets/upload setup)
 const getProfilePic = (photoName) => {
   return photoName 
-    ? `http://localhost:3000/assets/upload/${photoName}` 
+    ? `https://fullstackproject1-2.onrender.com/assets/upload/${photoName}` 
     : "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"; // Default fallback
 };
 

@@ -3,7 +3,7 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { useCart } from "../../../context/CartContext";
 import request from "../../../utils/request";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://fullstackproject1-2.onrender.com";
 const FALLBACK_IMAGE = "https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=500";
 
 const ProductDetailPage = () => {
