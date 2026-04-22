@@ -540,8 +540,8 @@ const getMonthlySales = async (req, res) => {
           [Op.lt]: new Date(targetYear + 1, 0, 1),
         },
       },
-      group: [fn("MONTH", col("sale_date"))],
-      order: [[fn("MONTH", col("sale_date")), "ASC"]],
+      group: [literal('EXTRACT(MONTH FROM "sale_date")')], 
+      order: [[literal('EXTRACT(MONTH FROM "sale_date")'), "ASC"]],
     });
 
     // Create array for all 12 months with default 0 values
@@ -647,7 +647,7 @@ const getDailySales = async (req, res) => {
         },
       },
       group: [literal('EXTRACT(DAY FROM "sale_date")')],
-      order: [[fn("DAY", col("sale_date")), "ASC"]],
+      order: [[literal('EXTRACT(DAY FROM "sale_date")'), "ASC"]],
     });
 
     // Get number of days in the month
