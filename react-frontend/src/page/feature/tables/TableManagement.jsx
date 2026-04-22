@@ -12,7 +12,7 @@ const TableManagement = () => {
 
   const fetchTables = async () => {
     try {
-      const response = await axios.get("https://fullstackproject1-2.onrender.com/api/tables");
+      const response = await axios.get("https://fullstackproject1-1-dzlc.onrender.com/api/tables");
       if (response.data.success) {
         setTables(response.data.data);
       }
@@ -29,7 +29,7 @@ const TableManagement = () => {
 
     // Update Database
     try {
-      await axios.put(`https://fullstackproject1-2.onrender.com/api/tables/${id}`, { status: newStatus });
+      await axios.put(`https://fullstackproject1-1-dzlc.onrender.com/api/tables/${id}`, { status: newStatus });
     } catch (error) {
       showAlert("error", "Failed to sync with database");
       fetchTables(); // Revert UI if DB fails

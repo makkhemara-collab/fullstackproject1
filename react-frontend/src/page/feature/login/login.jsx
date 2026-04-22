@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaCoffee, FaLock, FaEnvelope } from "react-line-awesome"; // Or whatever icons you use
-import { baseURL } from "../../utils/config";
-import { getImagePath } from "../../utils/config";
+import { baseURL } from "../../../utils/config";
+import { getImagePath } from "../../../utils/config";
 
 const Login = () => {
   const [email, setEmail] = useState("");

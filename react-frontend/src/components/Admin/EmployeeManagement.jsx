@@ -30,7 +30,7 @@ const EmployeeManagement = () => {
     const fetchEmployees = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await axios.get('https://fullstackproject1-2.onrender.com/api/user', {
+            const response = await axios.get('https://fullstackproject1-1-dzlc.onrender.com/api/user', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             if (response.data.success) {
@@ -59,11 +59,11 @@ const EmployeeManagement = () => {
 
             // Step A: Save or Update user text data
             if (editId) {
-                res = await axios.put(`https://fullstackproject1-2.onrender.com/api/user`, { ...formData, user_id: editId }, {
+                res = await axios.put(`https://fullstackproject1-1-dzlc.onrender.com/api/user`, { ...formData, user_id: editId }, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
             } else {
-                res = await axios.post('https://fullstackproject1-2.onrender.com/api/user', formData, {
+                res = await axios.post('https://fullstackproject1-1-dzlc.onrender.com/api/user', formData, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 userId = res.data.data?.user_id; 
@@ -74,7 +74,7 @@ const EmployeeManagement = () => {
                 const photoData = new FormData();
                 photoData.append('photo', selectedFile);
                 
-                const photoRes = await axios.put(`https://fullstackproject1-2.onrender.com/api/user/upload-photo/${userId}`, photoData, {
+                const photoRes = await axios.put(`https://fullstackproject1-1-dzlc.onrender.com/api/user/upload-photo/${userId}`, photoData, {
                     headers: { 
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'multipart/form-data'
@@ -120,7 +120,7 @@ const EmployeeManagement = () => {
         if (window.confirm("Are you sure?")) {
             try {
                 const token = localStorage.getItem('token');
-                await axios.delete(`https://fullstackproject1-2.onrender.com/api/user/${id}`, {
+                await axios.delete(`https://fullstackproject1-1-dzlc.onrender.com/api/user/${id}`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 fetchEmployees();
