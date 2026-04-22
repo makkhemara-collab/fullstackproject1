@@ -46,7 +46,7 @@ const Login = () => {
         style={{
           flex: 1,
           /* 👇 1. This adds a 50% dark overlay AND your image */
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), #475569), url("${getImagePath("differents-types-de-cafe.jpg")}")`,
+         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), #475569), url("${getImagePath("differents-types-de-cafe.jpg")}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
