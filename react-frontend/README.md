@@ -1,16 +1,17 @@
-# React + Vite
+Project Status: Full-Stack E-commerce POS (Cloud Deployment)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Key Achievements:
 
-Currently, two official plugins are available:
+Hybrid Database Architecture: Successfully migrated the project from a local MySQL (MAMP) environment to a cloud-based PostgreSQL database on Render.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Environment Management: Implemented logic to detect environments and switch between local and production configurations.
 
-## React Compiler
+Secure Data Pipeline: Configured CORS and SSL requirements for secure cross-origin communication between the React frontend and Node.js backend.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Known Production Challenges (Deployment Phase):
 
-## Expanding the ESLint configuration
+Database Empty State: The PostgreSQL database is a clean cloud instance. New accounts and products must be registered through the UI to populate the tables and resolve foreign key constraints during checkout.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Postgres Syntax Transition: Currently resolving "MySQL-to-Postgres" function differences (specifically EXTRACT vs DAY/MONTH) in the analytics reporting modules.
+
+Ephemeral Storage: Render's static file system is ephemeral; images uploaded during the session may return a 404 after a server restart unless a persistent cloud bucket is used.
