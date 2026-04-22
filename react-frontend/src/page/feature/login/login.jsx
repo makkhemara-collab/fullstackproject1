@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { FaCoffee, FaLock, FaEnvelope } from "react-line-awesome"; // Or whatever icons you use
+import { baseURL } from "../../utils/config";
+import { getImagePath } from "../../utils/config";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +16,7 @@ const Login = () => {
     setError("");
     try {
       const response = await axios.post(
-        "https://fullstackproject1-2.onrender.com/api/user/login",
+        `${baseURL}/api/user/login`, // ✅ This will now use the correct -1-dzlc link
         { email, password },
       );
       if (response.data.success) {
@@ -44,8 +46,7 @@ const Login = () => {
         style={{
           flex: 1,
           /* 👇 1. This adds a 50% dark overlay AND your image */
-          backgroundImage:
-            'linear-gradient(rgba(0, 0, 0, 0.5), #475569), url("/differents-types-de-cafe.jpg")',
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), #475569), url("${getImagePath("differents-types-de-cafe.jpg")}")`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
