@@ -173,16 +173,16 @@
 
 /*
 // Search products (keyword: samsung)
-curl -X GET "https://fullstackproject1-2.onrender.com/api/product/search?keyword=samsung"
+curl -X GET "https://fullstackproject1-1-dzlc.onrender.com/api/product/search?keyword=samsung"
 
 // Get all products
-curl -X GET "https://fullstackproject1-2.onrender.com/api/product"
+curl -X GET "https://fullstackproject1-1-dzlc.onrender.com/api/product"
 
 // Get specific product by ID
-curl -X GET "https://fullstackproject1-2.onrender.com/api/product?prd_id=PRD001"
+curl -X GET "https://fullstackproject1-1-dzlc.onrender.com/api/product?prd_id=PRD001"
 
 // Create new product
-curl -X POST "https://fullstackproject1-2.onrender.com/api/product" \
+curl -X POST "https://fullstackproject1-1-dzlc.onrender.com/api/product" \
   -H "Content-Type: application/json" \
   -d '{
     "prd_id":"PRD003",
@@ -200,7 +200,7 @@ curl -X POST "https://fullstackproject1-2.onrender.com/api/product" \
   }'
 
 // Update product
-curl -X PUT "https://fullstackproject1-2.onrender.com/api/product/PRD001" \
+curl -X PUT "https://fullstackproject1-1-dzlc.onrender.com/api/product/PRD001" \
   -H "Content-Type: application/json" \
   -d '{
     "qty":40,
@@ -209,5 +209,5 @@ curl -X PUT "https://fullstackproject1-2.onrender.com/api/product/PRD001" \
   }'
 
 // Delete product
-curl -X DELETE "https://fullstackproject1-2.onrender.com/api/product/PRD001"
+curl -X DELETE "https://fullstackproject1-1-dzlc.onrender.com/api/product/PRD001"
 */

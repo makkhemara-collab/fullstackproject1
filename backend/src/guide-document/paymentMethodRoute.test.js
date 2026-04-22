@@ -79,9 +79,9 @@
 // ============================================
 
 /*
-curl -X GET "https://fullstackproject1-2.onrender.com/api/payment-method"
-curl -X GET "https://fullstackproject1-2.onrender.com/api/payment-method/CASH"
-curl -X POST "https://fullstackproject1-2.onrender.com/api/payment-method" -H "Content-Type: application/json" -d '{"code":"CARD","type":"Credit Card","is_active":1,"fee":2.5}'
-curl -X PUT "https://fullstackproject1-2.onrender.com/api/payment-method/CARD" -H "Content-Type: application/json" -d '{"type":"Debit Card","is_active":1,"fee":1.5}'
-curl -X DELETE "https://fullstackproject1-2.onrender.com/api/payment-method/CARD"
+curl -X GET "https://fullstackproject1-1-dzlc.onrender.com/api/payment-method"
+curl -X GET "https://fullstackproject1-1-dzlc.onrender.com/api/payment-method/CASH"
+curl -X POST "https://fullstackproject1-1-dzlc.onrender.com/api/payment-method" -H "Content-Type: application/json" -d '{"code":"CARD","type":"Credit Card","is_active":1,"fee":2.5}'
+curl -X PUT "https://fullstackproject1-1-dzlc.onrender.com/api/payment-method/CARD" -H "Content-Type: application/json" -d '{"type":"Debit Card","is_active":1,"fee":1.5}'
+curl -X DELETE "https://fullstackproject1-1-dzlc.onrender.com/api/payment-method/CARD"
 */

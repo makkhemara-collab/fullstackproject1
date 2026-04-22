@@ -83,9 +83,9 @@
 // ============================================
 
 /*
-curl -X GET "https://fullstackproject1-2.onrender.com/api/alert-setting"
-curl -X GET "https://fullstackproject1-2.onrender.com/api/alert-setting/1"
-curl -X POST "https://fullstackproject1-2.onrender.com/api/alert-setting" -H "Content-Type: application/json" -d '{"Stock_alert":10,"Qty_alert":2,"remark":"Custom alert","is_alert":1}'
-curl -X PUT "https://fullstackproject1-2.onrender.com/api/alert-setting/2" -H "Content-Type: application/json" -d '{"Stock_alert":8,"Qty_alert":1,"remark":"Updated alert","is_alert":0}'
-curl -X DELETE "https://fullstackproject1-2.onrender.com/api/alert-setting/2"
+curl -X GET "https://fullstackproject1-1-dzlc.onrender.com/api/alert-setting"
+curl -X GET "https://fullstackproject1-1-dzlc.onrender.com/api/alert-setting/1"
+curl -X POST "https://fullstackproject1-1-dzlc.onrender.com/api/alert-setting" -H "Content-Type: application/json" -d '{"Stock_alert":10,"Qty_alert":2,"remark":"Custom alert","is_alert":1}'
+curl -X PUT "https://fullstackproject1-1-dzlc.onrender.com/api/alert-setting/2" -H "Content-Type: application/json" -d '{"Stock_alert":8,"Qty_alert":1,"remark":"Updated alert","is_alert":0}'
+curl -X DELETE "https://fullstackproject1-1-dzlc.onrender.com/api/alert-setting/2"
 */
